@@ -8,22 +8,22 @@
     @endpush
 @endif
 
-<footer class="footer-area">
+<footer class="footer-area bg-secondary text-neutral">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="footer-content">
-                    <img src="{{ get_image(get_frontend_settings('light_logo')) }}" alt="system logo">
+                    <img src="{{ asset('images/PARA ONLINE_Mesa de trabajo 1 copia.svg') }}" alt="Academia Emer Light Logo">
                     <p class="description builder-editable" builder-identity="1">{{get_phrase('It is a long established fact that a reader will be the distract by the read content of a page layout')}}.</p>
 
                     <ul class="f-socials d-flex">
-                        <li><a href="{{ get_frontend_settings('twitter') }}"><i class="fa-brands fa-twitter"></i></a>
+                        <li><a href="{{ get_frontend_settings('twitter') }}" class="hover:text-primary"><i class="fa-brands fa-twitter"></i></a>
                         </li>
-                        <li><a href="{{ get_frontend_settings('facebook') }}"><i class="fa-brands fa-facebook-f"></i></a></li>
-                        <li><a href="{{ get_frontend_settings('linkedin') }}"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                        <li><a href="{{ get_frontend_settings('facebook') }}" class="hover:text-primary"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="{{ get_frontend_settings('linkedin') }}" class="hover:text-primary"><i class="fa-brands fa-linkedin-in"></i></a></li>
                     </ul>
                     <div class="gradient-border2">
-                        <a href="{{ route('contact.us') }}" class="gradient-border-btn">
+                        <a href="{{ route('contact.us') }}" class="gradient-border-btn text-primary hover:text-primary-light">
                             {{ get_phrase('Contact with Us') }}
                             <i class="fa-solid fa-arrow-right-long ms-2"></i></a>
                     </div>
@@ -37,7 +37,7 @@
                             <ul>
                                 @foreach (top_categories() as $category)
                                     <li>
-                                        <a href="{{ route('courses', $category->slug) }}">
+                                        <a href="{{ route('courses', $category->slug) }}" class="hover:text-primary">
                                             {{ ucfirst($category->title) }}</a>
                                     </li>
                                 @endforeach
@@ -49,9 +49,9 @@
                         <div class="footer-widget">
                             <h4>{{ get_phrase('Useful links') }}</h4>
                             <ul>
-                                <li><a href="{{ route('courses') }}">{{ get_phrase('Course') }}</a></li>
-                                <li><a href="{{ route('blogs') }}">{{ get_phrase('Blog') }}</a></li>
-                                <li><a href="{{ route('knowledge.base.topicks') }}">{{ get_phrase('Knowledge Base') }}</a></li>
+                                <li><a href="{{ route('courses') }}" class="hover:text-primary">{{ get_phrase('Course') }}</a></li>
+                                <li><a href="{{ route('blogs') }}" class="hover:text-primary">{{ get_phrase('Blog') }}</a></li>
+                                <li><a href="{{ route('knowledge.base.topicks') }}" class="hover:text-primary">{{ get_phrase('Knowledge Base') }}</a></li>
                             </ul>
                         </div>
                     </div>
@@ -77,11 +77,11 @@
                                 <p class="description builder-editable" builder-identity="3">{{ get_phrase("Subscribe to stay tuned for new web design and latest updates. Let's do it!") }}</p>
                                 <form action="{{ route('newsletter.store') }}" method="post" class="newslater-form" id="newslater-form">
                                     @csrf
-                                    <input type="text" name="email" class="form-control" placeholder="{{ get_phrase('Email address') }}">
+                                    <input type="text" name="email" class="form-control border-secondary focus:border-primary focus:ring-1 focus:ring-primary" placeholder="{{ get_phrase('Email address') }}">
                                     @if(get_frontend_settings('recaptcha_status'))
-                                        <button class="eBtn gradient g-recaptcha" data-sitekey="{{ get_frontend_settings('recaptcha_sitekey') }}" data-callback='onNewslaterSubmit' data-action='submit'>{{ get_phrase('Submit') }}</button>
+                                        <button class="eBtn gradient g-recaptcha bg-primary text-white hover:bg-primary-light active:bg-primary-dark" data-sitekey="{{ get_frontend_settings('recaptcha_sitekey') }}" data-callback='onNewslaterSubmit' data-action='submit'>{{ get_phrase('Submit') }}</button>
                                     @else
-                                        <button class="eBtn gradient">{{ get_phrase('Submit') }}</button>
+                                        <button class="eBtn gradient bg-primary text-white hover:bg-primary-light active:bg-primary-dark">{{ get_phrase('Submit') }}</button>
                                     @endif
                                 </form>
                             </div>
@@ -96,12 +96,12 @@
             <div class="row">
                 <div class="col-lg-8">
                     <ul class="footer-policy">
-                        <li><a href="{{ route('about.us') }}">{{ get_phrase('About Us') }}</a></li>
-                        <li><a href="{{ route('privacy.policy') }}">{{ get_phrase('Privacy Policy') }}</a></li>
-                        <li><a href="{{ route('terms.condition') }}">{{ get_phrase('Terms And Use') }}</a></li>
-                        <li><a href="{{ route('refund.policy') }}">{{ get_phrase('Sales and Refunds') }}</a></li>
-                        <li><a href="{{ route('cookie.policy') }}">{{ get_phrase('Cookie Policy') }}</a></li>
-                        <li><a href="{{ route('faq') }}">{{ get_phrase('FAQ') }}</a></li>
+                        <li><a href="{{ route('about.us') }}" class="hover:text-primary">{{ get_phrase('About Us') }}</a></li>
+                        <li><a href="{{ route('privacy.policy') }}" class="hover:text-primary">{{ get_phrase('Privacy Policy') }}</a></li>
+                        <li><a href="{{ route('terms.condition') }}" class="hover:text-primary">{{ get_phrase('Terms And Use') }}</a></li>
+                        <li><a href="{{ route('refund.policy') }}" class="hover:text-primary">{{ get_phrase('Sales and Refunds') }}</a></li>
+                        <li><a href="{{ route('cookie.policy') }}" class="hover:text-primary">{{ get_phrase('Cookie Policy') }}</a></li>
+                        <li><a href="{{ route('faq') }}" class="hover:text-primary">{{ get_phrase('FAQ') }}</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">

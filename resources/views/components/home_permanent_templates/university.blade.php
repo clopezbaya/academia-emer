@@ -53,121 +53,6 @@
         }
 
 
-        /* Start sub header */
-        .sub-header{
-            background-color: #121421;
-            border-color: #645b5b;
-        }
-        .sub-header .sub-header-left a{
-            color: #fff !important;
-        }
-        
-        .sub-header .nice-select.form-select{
-            filter: invert(1);
-            background-color: #edebdd;
-        }
-        /* End sub header */
-
-
-        .sub-header, .header-area {
-            --font-family: "Poppins", sans-serif;
-            --bg-white: #000;
-            --text-color: #9e9e9e;
-            --color-white: #000;
-            --color-1: #fff;
-            --color-2: #d5e0f3;
-            --color-black: #fff;
-            --box-shadow: rgba(76, 76, 109, 0.2) 12px 11px 34px 11px;
-            --box-shadow-2: rgba(79, 79, 112, 0.2) 0px 7px 29px 0px;
-        }
-        .offcanvas.offcanvas-start {
-            --font-family: "Poppins", sans-serif;
-            --bg-white: #fff;
-            --text-color: #6b7385;
-            --color-white: #fff;
-            --color-1: #2f57ef;
-            --color-2: #192335;
-            --color-black: #000;
-            --box-shadow: rgba(100, 100, 111, 0.2) 12px 11px 34px 11px;
-            --box-shadow-2: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        }
-
-        /* Start main header */
-        .header-area{
-            background-color: #121421;
-        }
-        .header-area .header-light-logo{
-            display: block !important;
-        }
-        .header-area .header-dark-logo{
-            display: none !important;
-        }
-        .header-area .primary-menu .have-mega-menu .menu-parent-a::after{
-            background: #000;
-        }
-        .header-area .primary-menu .have-mega-menu .menu-parent-a.active::after, .primary-menu .have-mega-menu .menu-parent-a:hover::after{
-            border: 6px solid #ffffff !important;
-            border-right: 6px solid #000000 !important;
-            border-bottom: 0 !important;
-            border-left: 6px solid #000000 !important;
-            vertical-align: middle !important;
-            border-radius: 3px !important;
-            background: #fff !important;
-            position: absolute !important;
-            right: -18px !important;
-            top: 9px !important;
-            left: auto !important;
-            width: 10px !important;
-        }
-        .header-area .form-control{
-            background-color: #121421;
-            border-color: #645b5b;
-        }
-        .header-area .form-control:focus{
-            background-color: #232323;
-            color: #c7c7c7 !important;
-            border-color: #807a7a;
-        }
-        .header-area .main-mega-menu{
-            background: #000000;
-            box-shadow: 0 12px 20px #a7a7a754;
-            border: 1px solid #4c4c4c;
-        }
-        .header-area .mega_list li a:hover{
-            background: #2a2a2a;
-            color: #ffff;
-        }
-        .header-area .child_category_menu{
-            background: #000;
-        }
-        .header-area .us-btn{
-            background-color: #121421;
-        }
-        .header-area .Userprofile .dropmenu-end{
-            background-color: #000000;
-            box-shadow: 0 12px 20px #a7a7a754;
-        }
-        .header-area .Userprofile .dropmenu-end a:hover svg path, .Userprofile .dropmenu-end a:hover{
-            background-color: #000;
-            color: #c664ff;
-            fill: #c664ff;
-        }
-        .header-area .figure_text{
-            color: #fff;
-        }
-        .header-area .primary-end a path{
-            stroke: var(--text-color);
-        }
-        .header-area .primary-end a path:hover, .primary-end a.active path{
-            stroke: #fff;
-        }
-        .header-area .toggle-bar{
-            color: #9e9e9e !important;
-        }
-        .header-area .gradient{
-            box-shadow: none;
-            border-left: 0;
-        }
         .service-card-banner-2>img{
             height: 200px;
             object-fit: cover;
@@ -186,7 +71,7 @@
                             <h1 class="title-5 max-w-850px fs-56px lh-normal fw-500 text-white text-center mb-20px"><span class="highlight-title">{{ get_frontend_settings('banner_title') }}</span></h1>
                             <p class="subtitle-5 max-w-620px fs-15px lh-24px text-white text-center mb-30px">{{ get_frontend_settings('banner_sub_title') }}</p>
                             <div class="d-flex justify-content-center">
-                                <a href="{{ route('courses') }}" class="btn btn-danger-1">{{ get_phrase('Get Started Now') }}</a>
+                                <a href="{{ route('courses') }}" class="btn btn-danger-1 bg-primary text-white hover:bg-primary-light active:bg-primary-dark focus:ring-2 focus:ring-primary focus:ring-opacity-50">{{ get_phrase('Get Started Now') }}</a>
                             </div>
                         </div>
                         <!-- Swiper -->
@@ -285,7 +170,7 @@
                         <p class="subtitle-5 fs-15px lh-25px mb-30px">
                             {{ get_phrase("Share your own experiences and challenges, and find encouragement and inspiration from others on a similar path. The diverse perspectives within our community will broaden your horizons and challenge your thinking, fostering a deeper understanding and a richer learning experience.  Together, we'll transform learning from a solitary pursuit into a collaborative adventure, where shared knowledge fuels individual growth and collective discovery.") }}
                         </p>
-                        <a href="{{ route('about.us') }}" class="btn btn-danger-1">{{ get_phrase('Learn more about us') }}</a>
+                        <a href="{{ route('about.us') }}" class="btn btn-danger-1 bg-primary text-white hover:bg-primary-light active:bg-primary-dark focus:ring-2 focus:ring-primary focus:ring-opacity-50">{{ get_phrase('Learn more about us') }}</a>
                     </div>
                 </div>
             </div>
@@ -349,15 +234,15 @@
 
 
                                                 @if (isset($row->is_paid) && $row->is_paid == 0)
-                                                    <h4 class="title-5 fs-20px lh-26px fw-500 text-danger-2">{{ get_phrase('Free') }}</h4>
+                                                    <h4 class="title-5 fs-20px lh-26px fw-500 text-primary">{{ get_phrase('Free') }}</h4>
                                                 @elseif (isset($row->discount_flag) && $row->discount_flag == 1)
-                                                    <h4 class="title-5 fs-20px lh-26px fw-500 text-danger-2">
+                                                    <h4 class="title-5 fs-20px lh-26px fw-500 text-primary">
                                                         {{ currency($row->discounted_price, 2) }}
                                                         <del class="fs-14px text-secondary">{{currency($row->price)}}</del>
                                                     </h4>
                                                     
                                                 @else
-                                                    <h4 class="title-5 fs-20px lh-26px fw-500 text-danger-2">{{ currency($row->price, 2) }}</h4>
+                                                    <h4 class="title-5 fs-20px lh-26px fw-500 text-primary">{{ currency($row->price, 2) }}</h4>
                                                 @endif
                                             </div>
                                         </div>
@@ -371,7 +256,7 @@
             <div class="row mb-100px">
                 <div class="col-12">
                     <div class="d-flex align-items-center justify-content-center">
-                        <a href="{{ route('courses') }}" class="btn btn-danger-1">{{ get_phrase('See More') }}</a>
+                        <a href="{{ route('courses') }}" class="btn btn-danger-1 bg-primary text-white hover:bg-primary-light active:bg-primary-dark focus:ring-2 focus:ring-primary focus:ring-opacity-50">{{ get_phrase('See More') }}</a>
                     </div>
                 </div>
             </div>
@@ -467,13 +352,13 @@
                                 @foreach ($faqs as $key => $faq)
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="{{ $key }}">
-                                            <button class="accordion-button py-4 {{ $key == 0 ? '' : 'collapsed' }}" type="button" data-bs-toggle="collapse" data-bs-target="#qnaOne{{ $key }}" aria-expanded="true" aria-controls="qnaOne">
+                                            <button class="accordion-button py-4 {{ $key == 0 ? '' : 'collapsed' }} text-secondary hover:text-primary bg-neutral" type="button" data-bs-toggle="collapse" data-bs-target="#qnaOne{{ $key }}" aria-expanded="true" aria-controls="qnaOne">
                                                 {{ $faq['question'] }}
                                             </button>
                                         </h2>
                                         <div id="qnaOne{{ $key }}" class="accordion-collapse collapse px-0 {{ $key == 0 ? 'show' : '' }}" aria-labelledby="{{ $key }}" data-bs-parent="#accordionExample5">
                                             <div class="accordion-body">
-                                                <p class="answer">{{ $faq['answer'] }}</p>
+                                                <p class="answer text-secondary">{{ $faq['answer'] }}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -575,7 +460,7 @@
                                     <div class="blog-post1-details">
                                         <h3 class="title-5 mb-3 pt-2">{{ ucfirst($blog->title) }}</h3>
                                         <p class="info ellipsis-line-2">{{ ellipsis(strip_tags($blog->description), 160) }}</p>
-                                        <p class="read-more d-flex align-items-center">
+                                        <p class="read-more d-flex align-items-center hover:text-primary">
                                             <span>{{ get_phrase('Read More') }}</span>
                                             <img src="{{ asset('assets/frontend/default/image/angle-right-black-18.svg') }}" alt="">
                                         </p>

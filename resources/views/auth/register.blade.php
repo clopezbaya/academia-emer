@@ -11,7 +11,7 @@
                 <div class="row">
                     <div class="col-lg-7 col-md-6">
                         <div class="login-img">
-                            <img src="{{ asset('assets/frontend/default/image/login.gif') }}" alt="Sign Up">
+                            <img src="{{ asset('assets/frontend/default/image/login.png') }}" alt="Sign Up">
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">

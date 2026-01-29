@@ -17,38 +17,38 @@
                 <div class="row">
                     <div class="col-lg-7 col-md-6">
                         <div class="login-img">
-                            <img src="{{ asset('assets/frontend/default/image/login.gif') }}" alt="...">
+                            <img src="{{ asset('assets/frontend//default/image/login.png') }}" alt="Academia Emer Login Image">
                         </div>
                     </div>
                     <div class="col-lg-5 col-md-6">
                         <form action="{{ route('login') }}" class="global-form login-form mt-25" id="login-form" method="POST">
                             @csrf
-                            <h4 class="g-title">{{ get_phrase('Login') }}</h4>
-                            <p class="description">{{ get_phrase('See your growth and get consulting support!') }} </p>
+                            <h4 class="g-title text-secondary">{{ get_phrase('Login') }}</h4>
+                            <p class="description text-secondary">{{ get_phrase('See your growth and get consulting support!') }} </p>
                             <div class="form-group">
-                                <label for="email" class="form-label">{{ get_phrase('Email') }}</label>
-                                <input type="email" id="email" name="email" class="form-control" placeholder="{{ get_phrase('Your Email') }}">
+                                <label for="email" class="form-label text-secondary">{{ get_phrase('Email') }}</label>
+                                <input type="email" id="email" name="email" class="form-control border-secondary focus:border-primary focus:ring-1 focus:ring-primary" placeholder="{{ get_phrase('Your Email') }}">
                             </div>
                             <div class="form-group">
-                                <label for="" class="form-label">{{ get_phrase('Password') }}</label>
-                                <input type="password" id="password" name="password" class="form-control" placeholder="*********">
+                                <label for="" class="form-label text-secondary">{{ get_phrase('Password') }}</label>
+                                <input type="password" id="password" name="password" class="form-control border-secondary focus:border-primary focus:ring-1 focus:ring-primary" placeholder="*********">
                             </div>
                             <div class="form-group mb-25 d-flex justify-content-between align-items-center remember-me">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                    <label class="form-check-label" for="flexCheckChecked">{{ get_phrase('Remember Me') }}</label>
+                                    <label class="form-check-label text-secondary" for="flexCheckChecked">{{ get_phrase('Remember Me') }}</label>
                                 </div>
-                                <a href="{{route('password.request')}}">{{ get_phrase('Forget Password?') }}</a>
+                                <a href="{{route('password.request')}}" class="text-primary hover:text-primary-light focus:text-primary-dark">{{ get_phrase('Forget Password?') }}</a>
                             </div>
 
                             @if(get_frontend_settings('recaptcha_status'))
-                                <button class="eBtn gradient w-100 g-recaptcha" data-sitekey="{{ get_frontend_settings('recaptcha_sitekey') }}" data-callback='onLoginSubmit' data-action='submit'>{{ get_phrase('Login') }}</button>
+                                <button class="eBtn gradient w-100 g-recaptcha bg-primary text-white hover:bg-primary-light active:bg-primary-dark focus:ring-2 focus:ring-primary focus:ring-opacity-50" data-sitekey="{{ get_frontend_settings('recaptcha_sitekey') }}" data-callback='onLoginSubmit' data-action='submit'>{{ get_phrase('Login') }}</button>
                             @else
-                                <button type="submit" class="eBtn gradient w-100">{{ get_phrase('Login') }}</button>
+                                <button type="submit" class="eBtn gradient w-100 bg-primary text-white hover:bg-primary-light active:bg-primary-dark focus:ring-2 focus:ring-primary focus:ring-opacity-50">{{ get_phrase('Login') }}</button>
                             @endif
 
                             <p class="mt-20">{{ get_phrase('Not have an account yet?') }}
-                                <a href="{{ route('register') }}">{{ get_phrase('Create Account') }}</a>
+                                <a href="{{ route('register') }}" class="text-primary hover:text-primary-light focus:text-primary-dark">{{ get_phrase('Create Account') }}</a>
                             </p>
 
                             {{-- <p class="my-3">Login As -</p>

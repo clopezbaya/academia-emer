@@ -105,20 +105,20 @@
                                         @endphp
                                         
                                         @if($course->expiry_date > 0 && $course->expiry_date < time())
-                                            <a href="{{ route('purchase.course', ['course_id' => $course->course_id]) }}" class="eBtn learn-btn w-100 text-center mt-20 f-500">
+                                            <a href="{{ route('purchase.course', ['course_id' => $course->course_id]) }}" class="eBtn learn-btn w-100 text-center mt-20 f-500 gradient" style="color: #FFFFFF !important;">
                                                 {{ get_phrase('Renew') }}
                                             </a>
                                         @else
                                             @if ($course_progress > 0 && $course_progress < 100.00)
-                                                <a href="{{ $url }}" class="eBtn learn-btn w-100 text-center mt-20 f-500">
+                                                <a href="{{ $url }}" class="eBtn learn-btn w-100 text-center mt-20 f-500 gradient" style="color: #FFFFFF !important;">
                                                     {{ get_phrase('Continue') }}
                                                 </a>
                                             @elseif ($course_progress == 100.00)
-                                                <a href="{{ $url }}" class="eBtn learn-btn w-100 text-center mt-20 f-500">
+                                                <a href="{{ $url }}" class="eBtn learn-btn w-100 text-center mt-20 f-500 gradient" style="color: #FFFFFF !important;">
                                                     {{ get_phrase('Watch again') }}
                                                 </a>
                                             @else
-                                                <a href="{{ $url }}" class="eBtn learn-btn w-100 text-center mt-20 f-500">
+                                                <a href="{{ $url }}" class="eBtn learn-btn w-100 text-center mt-20 f-500 gradient" style="color: #FFFFFF !important;">
                                                     {{ get_phrase('Start Now') }}
                                                 </a>
                                             @endif
@@ -191,7 +191,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <a href="{{ route('course.details', $course->slug) }}" class="eBtn learn-btn w-100 text-center mt-20 f-500">
+                                    <a href="{{ route('course.details', $course->slug) }}" class="eBtn learn-btn w-100 text-center mt-20 f-500 gradient" style="color: #FFFFFF !important;">
                                         {{ get_phrase('View Details') }}
                                     </a>
                                 </div>

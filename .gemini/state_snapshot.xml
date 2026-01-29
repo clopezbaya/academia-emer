@@ -1,0 +1,86 @@
+<overall_goal>
+        Apply the complete visual identity of "Academia Emer" (medical emergency courses) to an existing web and mobile application without modifying any logic, flow, functionality, component structure, or system behavior, strictly adhering to visual styles (CSS/variables/classes/themes).
+    </overall_goal>
+
+    <active_constraints>
+        - NO modification of JavaScript, business logic, flows, validations, routes, states, APIs, or functional structure.
+        - ONLY apply visual styles (CSS / variables / classes / themes).
+        - Mandatory color palette: Primary: `#ba1557`, Secondary: `#515151`, Neutral: `#FFFFFF`.
+    </active_constraints>
+
+    <key_knowledge>
+        - The application is built with Laravel and uses Blade templating.
+        - Tailwind CSS is integrated and configured via `tailwind.config.js`.
+        - Primary CSS files are `public/assets/frontend/default/css/style.css` and `public/assets/frontend/default/css/custom_style.css`.
+        - The CSS variable `--color-1` in `style.css` is crucial for many accent colors across the site, including active navigation links and hover states.
+        - Browser caching is a recurring issue for the user not seeing the applied CSS changes.
+        - The `gradient-border2` class is a wrapper `div` that applies a 1px gradient border effect to its child elements, used in conjunction with `gradient-border-btn` for specific button styles. (This approach was attempted and reverted as it did not produce the desired visual for the user).
+    </key_knowledge>
+
+    <artifact_trail>
+        - `tailwind.config.js`: Defined custom color palette (`primary`, `secondary`, `neutral`) and their variations (`primary-dark`, `primary-light`, `secondary-light`) within `theme.extend.colors` for utility class usage.
+        - `resources/views/auth/login.blade.php`: Updated the login image, applied primary button styling (background, hover, active, focus states) to login buttons, branded links with primary colors, and styled input fields and labels with secondary colors.
+        - `resources/views/layouts/default.blade.blade.php`: Updated the favicon link to use a brand SVG.
+        - `resources/views/components/home_made_by_developer/top_bar.blade.php`: Applied `bg-secondary` to the top bar div, `text-neutral` to contact links, and `bg-neutral text-secondary` to the language selector.
+        - `resources/views/components/home_made_by_developer/header.blade.php`: Applied `bg-neutral` to the main header, updated logos with brand SVG and adjusted visibility, styled main navigation links, search bars, cart/wishlist icons, guest login button, user profile dropdown, and mobile offcanvas menu using brand colors and interactive states.
+        - `resources/views/components/home_made_by_developer/footer.blade.php`: Applied `bg-secondary text-neutral` to the footer, updated footer logo, styled social media icons, "Contact with Us" button, widget links, newsletter form elements, and footer policy links with brand colors and interactive states.
+        - `resources/views/components/home_permanent_templates/university.blade.php`: Removed redundant inline CSS rules for sub-header/header, applied primary button styling to "Get Started Now", "Learn more about us", and "See More" buttons, changed course pricing to `text-primary`, and branded FAQ accordion elements and blog "Read More" links.
+        - `public/assets/frontend/default/css/style.css`:
+            - Updated the CSS variable `--color-1` to the brand's primary color (`#ba1557`), affecting all elements relying on `var(--color-1)` including active navbar links, hover states, and various accents.
+            - Modified `background-image` for `.gradient` (general buttons) and `.pr-wrap` classes (section background) to use the primary color gradient.
+            - Updated `background-image` for `.gSearch-show button` to use the primary color gradient.
+            - Updated `background-image` for Owl Carousel navigation buttons (`.user-slider .owl-nav .owl-prev`, `.user-slider .owl-nav .owl-next`) to use the primary color gradient.
+            - Changed `.footer-area` background to use a secondary color gradient.
+            - Updated default `background` for `.gradient-border-btn` (e.g., "Contact with Us" button) to use primary brand colors.
+            - Restored `width: 208px;` to `.gradient-border-btn` as per user feedback.
+            - Modified `.gradient-border-btn:hover` to have a solid background-color matching the primary color (`#ba1557`) and explicitly set `color: #FFFFFF !important;` and `background-color: #ba1557 !important;` to address the "blue/purple hover" issue and enforce styles.
+            - Removed the conflicting `.c-card:hover .eBtn` rule that was causing a blue/purple gradient hover on buttons when their parent card was hovered.
+            - **Added `!important` to the `color` property of the `.eBtn` class to ensure the button text is always white.**
+        - `public/assets/frontend/default/css/custom_style.css`:
+            - Added custom styling for `.eBtn.learn-btn` (background-color, hover, active, focus states) to apply primary brand colors (This was attempted, but then superseded by using `gradient-border-btn`).
+        - `resources/views/frontend/default/student/my_courses/index.blade.php`:
+            - Removed explicit Tailwind `bg-primary` related classes from `eBtn learn-btn` elements.
+            - Added `gradient-border-btn` class to all "Renew", "Continue", "Watch again", "Start Now" buttons in the main course list and "View Details" button in the recommended courses section.
+            - Reverted all buttons to their state before the `div.gradient-border2` wrapper was added, ensuring `w-100` is back on the `<a>` tags.
+            - Replaced `gradient-border-btn` class with `gradient` class for all buttons on the `my-courses` page.
+    </artifact_trail>
+
+    <file_system_state>
+        - CWD: `/xampp/htdocs/academia-emer`
+        - MODIFIED:
+            - `tailwind.config.js`
+            - `resources/views/auth/login.blade.php`
+            - `resources/views/layouts/default.blade.php`
+            - `resources/views/components/home_made_by_developer/top_bar.blade.php`
+            - `resources/views/components/home_made_by_developer/header.blade.php`
+            - `resources/views/components/home_made_by_developer/footer.blade.php`
+            - `resources/views/components/home_permanent_templates/university.blade.php`
+            - `public/assets/frontend/default/css/style.css`
+            - `public/assets/frontend/default/css/custom_style.css`
+            - `resources/views/frontend/default/student/my_courses/index.blade.php`
+    </file_system_state>
+
+    <recent_actions>
+        - Distilled the user's initial branding requirements and mandatory color palette.
+        - Configured Tailwind CSS with the new color definitions.
+        - Iteratively applied brand styling to various UI components (login page, header, footer, home page sections, my-courses page) by modifying Blade templates and core CSS files.
+        - Investigated and corrected overridden CSS rules in different stylesheets.
+        - Addressed user feedback regarding specific elements still showing old styling, often requiring verification of CSS precedence and explicit changes.
+        - Repeatedly advised the user to clear browser cache to view the latest changes.
+        - Attempted to apply a gradient border effect to buttons by wrapping them in a `div.gradient-border2`, which was later reverted at the user's request.
+        - Reverted structural changes to buttons in `my_courses/index.blade.php` and CSS changes in `style.css` as per user feedback.
+        - Modified `gradient-border-btn:hover` styles in `style.css` to ensure a solid primary background and white text, explicitly using `!important` to guarantee precedence and directly addressing the user's "blue/purple hover" complaint.
+        - Identified and removed a conflicting CSS rule (`.c-card:hover .eBtn`) in `style.css` that was causing the unwanted blue/purple gradient hover effect on buttons when their parent card was hovered.
+        - Updated the buttons on `my-courses` page to use the `gradient` class for a gradient background effect, as requested by the user.
+        - **Added `!important` to the `color` property of the `.eBtn` class in `style.css` to ensure the button text is white.**
+    </recent_actions>
+
+    <task_state>
+        1. [DONE] Define custom color palette in `tailwind.config.js`.
+        2. [DONE] Brand core application components (login, header, footer, top bar).
+        3. [DONE] Brand home page content areas and remove conflicting inline styles.
+        4. [DONE] Update core `style.css` and `custom_style.css` with brand gradients and colors.
+        5. [DONE] Ensure buttons on the `my-courses` page have a gradient background and white text, with the correct hover effect.
+        6. [IN PROGRESS] Address any remaining unapplied styles, prioritizing browser cache issues.
+        7. [TODO] Inform the user about the inability to modify specific inline SVG gradients directly due to tool limitations.
+    </task_state>
