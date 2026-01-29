@@ -7,9 +7,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6">
-                <div class="sub-header-left">
+                <div class="sub-header-left left-sub">
                     <ul class="d-flex">
-                        <li>
+                        <li class="px-3">
                             <a href="tel:{{ get_settings('phone') }}" class="text-neutral">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -19,7 +19,7 @@
                                 {{ get_settings('phone') }}
                             </a>
                         </li>
-                        <li>
+                        <li class="px-3">
                             <a href="#" class="text-neutral">
                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M9.99453 11.1912C11.4305 11.1912 12.5945 10.0272 12.5945 8.59121C12.5945 7.15527 11.4305 5.99121 9.99453 5.99121C8.55859 5.99121 7.39453 7.15527 7.39453 8.59121C7.39453 10.0272 8.55859 11.1912 9.99453 11.1912Z" stroke="#192335" stroke-width="1.25" />

@@ -33,6 +33,9 @@
     <!-- Yaireo Tagify -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/global/tagify-master/dist/tagify.css') }}" rel="stylesheet" type="text/css" />
 
+    <!-- Branding Overrides -->
+    <link rel="stylesheet" href="{{ asset('assets/frontend/default/css/branding.css') }}">
+
 </head>
 
 <body>
